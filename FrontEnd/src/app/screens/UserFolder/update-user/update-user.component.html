@@ -1,0 +1,52 @@
+
+  <div class="container mt-4 mb-3 w-25 p-3 border border-secondary  text-dark n"  dir="rtl">
+
+    <h2 class="mb-2 text-primary ">עדכון משתמש</h2>
+
+    <div class="mb-3">
+      <label><strong>שם פרטי</strong></label>
+      <input  [(ngModel)]="UserObj.FirstName"  type="text" placeholder="שדה חובה אנא הזן" maxlength="10"
+       class="{{this.ResponseMessage[0].Isok && this.UserObj.FirstName.length!=0 ? 'form-control is-valid w-55' : 'form-control is-invalid w-55'}}"
+        aria-describedby="validationServerFirstNameFeedback"   required>
+      <div id="validationServerFirstNameFeedback" class="invalid-feedback">
+        {{this.ResponseMessage[0].Message}}
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label><strong>שם משפחה</strong></label>
+      <input  type="text" placeholder="שדה חובה אנא הזן" maxlength="10"
+      class="{{this.ResponseMessage[1].Isok && this.UserObj.LastName.length!=0 ? 'form-control is-valid w-55' : 'form-control is-invalid w-55'}}"
+        aria-describedby="validationServerLastNameFeedback" [(ngModel)]="UserObj.LastName"  required>
+      <div id="validationServerLastNameFeedback" class="invalid-feedback">
+      {{this.ResponseMessage[1].Message}}
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label><strong>סיסמה</strong></label>
+      <input type="{{Type}}" placeholder="שדה חובה אנא הזן" maxlength="16"
+      class="{{this.ResponseMessage[2].Isok && this.UserObj.Password.length!=0 ? 'form-control is-valid w-55' : 'form-control is-invalid w-55'}}"
+        aria-describedby="validationServerPasswordFeedback"  [(ngModel)]="UserObj.Password" required>
+        <i class="{{this.ShowPassword ? 'fas fa-eye' :'fas fa-eye-slash'}}" (click)="!ShowPassword ? ShowPassword=true : ShowPassword=false; Type=='password' ? Type='text':Type='password'"  title="ראה סיסמה"></i>
+        <div id="validationServerPasswordFeedback" class="invalid-feedback">
+        {{this.ResponseMessage[2].Message}}
+      </div>
+    </div>
+
+    <app-alert-error class="mt-1 mb-2" [ObjAlert]="ToAlert"  (ObjToChangeFather)="CloseAlert($event)" *ngIf="OpenAlert"></app-alert-error>
+    <button type="submit" (click)="UpdateUser()" class="btn btn-primary">עדכן</button>
+
+  </div>
+
+
+<!-- class="{{this.ResponseMessage[0].Isok  ? 'form-control is-valid w-55' : 'form-control is-invalid w-55'}}" -->
+
+<!-- בשביל להגיד מתי האינפוט בסדר -->
+<!--class="form-control is-invalid" -->
+<!-- class="form-control is-valid" -->
+
+
+<!-- בשביל התצוגת שגיאה בפלט -->
+<!-- class="invalid-feedback" -->
+<!-- class="valid-feedback" -->

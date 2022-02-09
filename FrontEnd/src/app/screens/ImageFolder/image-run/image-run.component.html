@@ -1,0 +1,25 @@
+<div class="container">
+  <h2 class="mb-3"><strong>בין עבודותינו</strong></h2>
+
+  <div>
+        <img src={{this.ImageArr[index].Img}}>
+  </div>
+  
+  <div class="mt-3">
+
+    <button class="btn btn-secondary " (click)="OnFront()">
+      <b>
+        <</b>
+       </button>
+
+       <button class="btn btn-secondary mr-1 ml-1" (click)="startOrStopFlag ? stopInterval() : startInterval() ;
+       Situation =='עצור' ? Situation ='המשך' : Situation ='עצור' ">
+         <strong>{{Situation}}</strong>
+       </button>
+
+      <button class="btn btn-secondary" (click)="OnBack()">
+        <b>></b>
+      </button>
+  </div>
+
+</div>

@@ -1,0 +1,36 @@
+<!-- <p>update-post works!</p>
+<button (click)="ChangeStage()">X</button> -->
+
+
+
+
+<div class="container mt-4 mb-3 w-25 p-3 border border-secondary text-dark n form">
+  <h2 class="mb-3 text-primary ">עדכון מודעה</h2>
+
+  <div class="mb-3">
+    <label><strong>כותרת</strong></label>
+    <input [(ngModel)]="ObjToUpdatePost.Header" type="text"  placeholder="שדה חובה אנא הזן!" maxlength="30"
+    class="form-control {{this.Response[0].Isok && this.ObjToUpdatePost.Header != ''
+    && this.ObjToUpdatePost.Header !=null  ? 'is-valid' : 'is-invalid'}}"
+    aria-describedby="validationServerHeaderFeedback"   required>
+   <div id="validationServerHeaderFeedback" class="invalid-feedback">
+     {{this.Response[0].Message}}
+   </div>
+  </div>
+
+  <div class="mb-3">
+    <Label><strong>פרטים נוספים</strong></Label>
+    <input  [(ngModel)]="ObjToUpdatePost.About" type="text"  placeholder="שדה חובה אנא הזן!" maxlength="150"
+    class="form-control {{this.Response[1].Isok && this.ObjToUpdatePost.About != ''
+    && this.ObjToUpdatePost.About !=null? 'is-valid' : 'is-invalid'}}"
+    aria-describedby="validationServerAboutFeedback"   required>
+   <div id="validationServerAboutFeedback" class="invalid-feedback">
+     {{this.Response[1].Message}}
+   </div>
+  </div>
+
+  <button class="btn btn-primary" (click)="OnClickUpdatePost()">המשך</button>
+
+</div>
+
+

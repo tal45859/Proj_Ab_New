@@ -1,0 +1,41 @@
+<div class="container" dir="rtl">
+  <div class="float-end mr-1 mt-3"><button type="button" (click)="ChangeStage()" class="btn-close"
+      aria-label="Close"></button></div>
+
+  <h2 class="mb-2 text-center">{{ObjToUpdatePost.Header}}</h2>
+  <h5 class="mb-3 text-center">{{ObjToUpdatePost.About}}</h5>
+
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <div *ngIf="ImageArr.length==0" class="carousel-item active" data-bs-interval="5000">
+        <img src="assets\\default.jpg" class="d-block w-100" alt="{{ObjToUpdatePost.Header}}">
+      </div>
+
+      <div *ngIf="ImageArr.length !=0" class="carousel-item active" data-bs-interval="5000">
+        <img src="{{ImageArr[0].Img}}" class="d-block w-100" alt="{{ObjToUpdatePost.Header}}">
+      </div>
+
+      <div *ngIf="ImageArr.length>1">
+        <div class="carousel-item" data-bs-interval="2000" *ngFor="let item of ImageArr">
+          <img src="{{item.Img}}" class="d-block w-100" alt="{{ObjToUpdatePost.Header}}">
+        </div>
+      </div>
+
+    </div>
+    <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- <div *ngIf="ImageArr==null">
+    <img src="assets\default.jpg"  alt="{{ObjToUpdatePost.Header}}">
+  </div> -->
+
+
+</div>

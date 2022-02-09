@@ -1,0 +1,23 @@
+<div class="container mt-3 " *ngIf="Stage==1">
+  <div class="grid-container">
+    <div *ngFor="let item of PostArr">
+      <div class="card mb-3">
+        <img class="card-img-top" [src]=GetImageByPostId(item.Id) alt="{{item.Header}}">
+        <div class="card-body">
+          <h5 class="card-title">{{item.Header}}</h5>
+          <p class="card-text">{{item.About}}</p>
+          <button class="btn btn-secondary" (click)="Stage=2 ; PostIdForChildren=item.Id">פרטים נוספים</button>
+          <div *ngIf="Auth!=null && Auth!=''" class="mt-2">
+            <button class="btn btn-secondary mr-1" (click)="Stage=3 ; PostIdForChildren=item.Id">עדכן</button>
+            <button class="btn btn-danger" (click)="OnClickDeletePost(item.Id)">מחק</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-alert-error class="mt-1 mb-2" [ObjAlert]="ToAlert"  (ObjToChangeFather)="CloseAlert($event)" *ngIf="OpenAlert"></app-alert-error>
+</div>
+<app-post-details (StageOUT)="ChangeStage($event)" [PostId]="PostIdForChildren" *ngIf="Stage==2"></app-post-details>
+<app-update-post-home  [PostId]="PostIdForChildren" *ngIf="Stage==3"></app-update-post-home>
+<!-- Post/AllPost -->
+

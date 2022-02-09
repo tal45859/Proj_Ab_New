@@ -1,0 +1,12 @@
+.header{
+  /* position: absolute; */
+  position: relative;
+  height: 50px;
+  width: 100%;
+  z-index: 1001;
+  text-align: center;
+}
+.bb{
+  /* background-color: rgb(200, 211, 214); */
+  background-image: url("C:\Users\Tal\Desktop\פרויקטים\ProjABNEW\abprojnew\src\assets\logo.jpg");
+}

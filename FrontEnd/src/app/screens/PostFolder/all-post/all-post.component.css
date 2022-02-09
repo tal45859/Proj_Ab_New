@@ -1,0 +1,29 @@
+.grid-container {
+  margin-left: 4%;
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.card{
+  text-align: center;
+  margin-left:null;
+  margin-right: null;
+  width: 16rem;
+  height: 500px;
+}
+img
+{
+  width: 15.88rem;
+  height:300px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .grid-container {
+    margin-left:16%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto ;
+  }
+}

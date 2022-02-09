@@ -1,0 +1,2 @@
+<app-update-post [postId]="PostId" (PostObjForFather)="ChangePostObj($event)" (StageOUT)="ChangeStage($event)"  *ngIf="Stage==1"></app-update-post>
+<app-update-image   [postObj]="this.PostObj" *ngIf="Stage==2"></app-update-image>

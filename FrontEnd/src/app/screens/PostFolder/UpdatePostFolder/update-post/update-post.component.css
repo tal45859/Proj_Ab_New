@@ -1,0 +1,25 @@
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  direction: rtl;
+  text-align: center;
+}
+
+input
+{
+  text-align: center;
+}
+input::placeholder
+{
+  color: red;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .container {
+    width: 80% !important;
+    margin: 10%;
+  }
+}

@@ -1,0 +1,64 @@
+<div class="container mt-4 mb-3 w-25 p-3  text-dark" dir="rtl" >
+
+  <h2 class="mb-3">להצעת מחיר בהודעה</h2>
+
+  <div class="mb-3">
+    <input  [(ngModel)]="AddMessage.FirstName" type="text"  placeholder="שם פרטי" maxlength="10"
+    class="form-control  {{this.Response[0].Isok ? '' : 'is-invalid ErrorPlaceHolder'}}"
+    aria-describedby="validationServerFirstNameFeedback"   required>
+   <div id="validationServerFirstNameFeedback" class="invalid-feedback">
+     {{this.Response[0].Message}}
+   </div>
+  </div>
+
+  <div class="mb-3">
+    <input  [(ngModel)]="AddMessage.LastName" type="text"  placeholder="שם משפחה" maxlength="10"
+    class="form-control  {{this.Response[1].Isok ? '' : 'is-invalid ErrorPlaceHolder'}}"
+    aria-describedby="validationServerLastNameFeedback"   required>
+   <div id="validationServerLastNameFeedback" class="invalid-feedback">
+     {{this.Response[1].Message}}
+   </div>
+  </div>
+
+
+  <div class="mb-3">
+    <input  [(ngModel)]="AddMessage.Email" type="text"  placeholder="מייל" maxlength="50"
+    class="form-control {{this.Response[2].Isok ? '' : 'is-invalid ErrorPlaceHolder'}}"
+    aria-describedby="validationServerEmailFeedback"   required>
+   <div id="validationServerEmailFeedback" class="invalid-feedback">
+     {{this.Response[2].Message}}
+   </div>
+  </div>
+
+  <div class="mb-3">
+    <input  [(ngModel)]="AddMessage.Phone" type="text"  placeholder="טלפון" maxlength="50"
+    class="form-control {{this.Response[3].Isok ? '' : 'is-invalid ErrorPlaceHolder'}}"
+    aria-describedby="validationServerPhoneFeedback"   required>
+   <div id="validationServerPhoneFeedback" class="invalid-feedback">
+     {{this.Response[3].Message}}
+   </div>
+  </div>
+
+  <div class="mb-3">
+    <input  [(ngModel)]="AddMessage.Header" type="text"  placeholder="כותרת" maxlength="50"
+    class="form-control {{this.Response[4].Isok ? '' : 'is-invalid ErrorPlaceHolder'}}"
+    aria-describedby="validationServerHeaderFeedback"   required>
+   <div id="validationServerHeaderFeedback" class="invalid-feedback">
+     {{this.Response[4].Message}}
+   </div>
+  </div>
+
+  <div class="mb-3">
+    <textarea class="form-control {{this.Response[5].Isok ? '' : 'is-invalid ErrorPlaceHolder'}}"
+     [(ngModel)]="AddMessage.Body" type="text" aria-describedby="validationServerBodyFeedback"
+      placeholder="גוף הבקשה" required></textarea>
+   <div id="validationServerBodyFeedback" class="invalid-feedback">
+     {{this.Response[5].Message}}
+   </div>
+  </div>
+
+  <div>
+    <button class="btn btn-secondary" (click)="OnAddMessage()">שלח</button>
+  </div>
+  <app-alert-error class="mt-1 mb-2" [ObjAlert]="ToAlert"  (ObjToChangeFather)="CloseAlert($event)" *ngIf="OpenAlert"></app-alert-error>
+</div>

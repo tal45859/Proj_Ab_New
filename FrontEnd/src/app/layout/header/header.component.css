@@ -1,0 +1,24 @@
+.topnav {
+  background-color: rgb(44, 44, 44);
+  overflow: hidden;
+  direction: rtl;
+}
+
+ a {
+  float: right;
+  color:rgb(200, 211, 214);
+  text-align: center;
+  padding: 14px 20px;
+  font-size: 17px;
+}
+
+a:hover {
+  background-color: rgb(67, 78, 179);
+  color:rgb(200, 211, 214);
+}
+
+.Logo{
+position :relative;
+   height: 450px;
+    width: 100%;
+}

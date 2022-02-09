@@ -1,0 +1,39 @@
+.container
+{
+  height: 450px;
+  width: 600px;
+  direction: rtl;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+/* .container {
+  width: 800px;
+  height: 600px;
+  background-color: #f2f2f2;
+  direction: rtl;
+  text-align: center;
+} */
+
+
+img{
+  position :relative;
+   height: 350px;
+    width: 300px;
+}
+
+@media only screen and (max-width: 600px) {
+
+.container {
+  width: 80% !important;
+  margin: 10%;
+}
+
+
+img{
+  position :relative;
+   height: 300px;
+    width: 240px;
+}
+
+}

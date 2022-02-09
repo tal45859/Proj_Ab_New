@@ -1,0 +1,66 @@
+
+  <div class="container mt-4 mb-3 w-25 p-3 border border-secondary text-dark" dir="rtl" >
+
+    <h2 class="mb-2 text-primary ">הוסף משתמש</h2>
+
+    <div class="mb-3">
+      <input  [(ngModel)]="UserObj.FirstName" type="text"  placeholder="שם פרטי" maxlength="10"
+      class="form-control  {{this.ResponseMessage[0].Isok ? '' : 'is-invalid ErrorPlaceHolder'}}"
+      aria-describedby="validationServerFirstNameFeedback"   required>
+     <div id="validationServerFirstNameFeedback" class="invalid-feedback">
+       {{this.ResponseMessage[0].Message}}
+     </div>
+    </div>
+
+    <div class="mb-3">
+      <input  [(ngModel)]="UserObj.LastName" type="text"  placeholder="שם משפחה" maxlength="10"
+      class="form-control  {{this.ResponseMessage[1].Isok ? '' : 'is-invalid ErrorPlaceHolder'}}"
+      aria-describedby="validationServerLastNameFeedback"   required>
+     <div id="validationServerLastNameFeedback" class="invalid-feedback">
+       {{this.ResponseMessage[1].Message}}
+     </div>
+    </div>
+
+    <div class="mb-3">
+      <input  [(ngModel)]="UserObj.Email" type="text"  placeholder="מייל" maxlength="50"
+      class="form-control {{this.ResponseMessage[2].Isok ? '' : 'is-invalid ErrorPlaceHolder'}}"
+      aria-describedby="validationServerEmailFeedback"   required>
+     <div id="validationServerEmailFeedback" class="invalid-feedback">
+       {{this.ResponseMessage[2].Message}}
+     </div>
+    </div>
+
+    <div class="mb-3">
+      <label><strong>תפקיד</strong></label>
+      <select [(ngModel)]="UserObj.Role" title="בחר תפקיד"
+       class="form-select form-select-sm  {{this.ResponseMessage[3].Isok ? '' : 'is-invalid ErrorPlaceHolder'}}"
+       aria-label="validationServerSelectFeedback" required>
+        <option selected disabled >בחר תפקיד</option>
+        <option *ngFor="let item of options" [value]="item.Value">{{item.Role}}</option>
+      </select>
+      <div id="validationServerSelectFeedback" class="invalid-feedback">
+        {{this.ResponseMessage[3].Message}}
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <input  [(ngModel)]="UserObj.Password" type="{{Type}}"  placeholder="סיסמה"  maxlength="16"
+      class="form-control  {{this.ResponseMessage[4].Isok ? '' : 'is-invalid ErrorPlaceHolder'}}"
+      aria-describedby="validationServerPasswordFeedback"  required>
+      <i class="{{this.ShowPassword ? 'fas fa-eye' :'fas fa-eye-slash'}}" (click)="!ShowPassword ? ShowPassword=true : ShowPassword=false; Type=='password' ? Type='text':Type='password'"  title="ראה סיסמה"></i>
+     <div id="validationServerPasswordFeedback" class="invalid-feedback">
+       {{this.ResponseMessage[4].Message}}
+     </div>
+    </div>
+
+    <div class="mb-2" *ngIf="this.CheckHaveEmail">
+      <p class="text-danger">מייל קיים במערכת!</p>
+    </div>
+    <app-alert-error class="mt-1 mb-2" [ObjAlert]="ToAlert"  (ObjToChangeFather)="CloseAlert($event)" *ngIf="OpenAlert"></app-alert-error>
+    <button type="submit" (click)="onClickAddUser()" class="btn btn-primary">הוסף</button>
+
+  </div>
+
+
+
+

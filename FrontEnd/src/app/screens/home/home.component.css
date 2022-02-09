@@ -1,0 +1,14 @@
+.container
+{
+  direction: rtl;
+  text-align: center;
+  padding: 2%;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .container {
+    width: 80% !important;
+    margin: 10%;
+  }
+}

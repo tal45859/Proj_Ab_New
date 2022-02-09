@@ -1,0 +1,29 @@
+<div class="container mt-4 mb-3 w-25 p-3 border border-secondary text-dark" dir="rtl">
+
+  <h2 class="mb-2 text-primary ">התחברות</h2>
+
+  <div class="mb-3">
+    <input [(ngModel)]="Tologin.email" type="text" placeholder="מייל" maxlength="40"
+      class="form-control  {{this.ResponseMessage[0].Isok ? '' : 'is-invalid'}}"
+      aria-describedby="validationServerEmailFeedback" required>
+    <div id="validationServerEmailFeedback" class="invalid-feedback">
+      {{this.ResponseMessage[0].Message}}
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <input [(ngModel)]="Tologin.password" type="{{Type}}" placeholder="סיסמה" maxlength="16"
+      class="form-control  {{this.ResponseMessage[1].Isok ? '' : 'is-invalid'}}"
+      aria-describedby="validationServerPasswordFeedback" required>
+    <i class="{{this.ShowPassword ? 'fas fa-eye' :'fas fa-eye-slash'}}"
+      (click)="!ShowPassword ? ShowPassword=true : ShowPassword=false; Type=='password' ? Type='text':Type='password'"
+      title="ראה סיסמה"></i>
+    <div id="validationServerPasswordFeedback" class="invalid-feedback">
+      {{this.ResponseMessage[1].Message}}
+    </div>
+    <p class="text-danger">{{Message}}</p>
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)="OnGetUtha()">התחבר</button>
+  <p class="mt-3">Ip Adress- {{ipAddress}}</p>
+</div>

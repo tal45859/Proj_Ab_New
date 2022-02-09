@@ -1,0 +1,8 @@
+
+   <!-- הוא יכיל את שתיהם וינהל את הניווט לכל אחד מהם ויהיה נאבר -->
+<nav *ngIf="this.Auth != null " class="nav nav-pills justify-content-center">
+  <button class="{{StageNumber == 1 ? 'btn btn-primary mr-1' : 'btn btn-secondary mr-1'}}" (click)="StageNumber=1" type="button" routerLink="AllPosts" >כל המודעות</button>
+  <button class="{{StageNumber == 2 ? 'btn btn-primary mr-1' : 'btn btn-secondary mr-1'}}" (click)="StageNumber=2" type="button"  routerLink="AddPostHome" >הוספת מודעה</button>
+</nav>
+<router-outlet></router-outlet>
+

@@ -1,0 +1,8 @@
+<nav class="nav nav-pills justify-content-center">
+  <button class="{{StageNumber == 1 ? 'btn btn-primary mr-1' : 'btn btn-secondary mr-1'}}" (click)="StageNumber=1" type="button" routerLink="Details" >פרטי משתמש</button>
+  <button class="{{StageNumber == 2 ? 'btn btn-primary mr-1' : 'btn btn-secondary mr-1'}}" (click)="StageNumber=2" type="button"  routerLink="Update" >עדכון משתמש</button>
+  <button class="{{StageNumber == 3 ? 'btn btn-primary mr-1' : 'btn btn-secondary mr-1'}}" (click)="StageNumber=3" *ngIf="Role == 'Admin'" type="button" routerLink="AllUser" >כל המשתמשים</button>
+  <button class="{{StageNumber == 4 ? 'btn btn-primary mr-1' : 'btn btn-secondary mr-1'}}" (click)="StageNumber=4" *ngIf="Role == 'Admin'" type="button" routerLink="AddUser" >הוספת משתמש</button>
+</nav>
+<router-outlet></router-outlet>
+

@@ -1,0 +1,28 @@
+<div class="container mt-4 mb-3 w-25 p-3 border border-secondary text-dark n form">
+  <h2 class="mb-3 text-primary ">הוספת תמונות</h2>
+
+  <div class="row mb-3" >
+    <div *ngFor="let image of this.ImageArr" class="col">
+      <img src="{{image.Img}}" class="card-img-top" alt="tttttt" style="width: 250px; height: 200px;">
+      <br>
+      <button class="btn btn-primary mt-2 mb-3" (click)="OnClickDeleteImage(image.Id)">מחק תמונה</button>
+    </div>
+  </div>
+
+  <div>
+    <input type="file" #file (change)="uploadFile(file.files)" style="display:none;"
+      multiple class="form-control mb-3 mt-3 {{Response[0].Isok ? 'is-valid' : 'is-invalid'}}"  aria-label="validationServerFileFeedback" required>
+    <button type="button" class="btn btn-primary mt-3 mb-3" (click)="file.click()">הוסף תמונה</button>
+    <div id="validationServerFileFeedback" class="invalid-feedback mb-3">
+      {{this.Response[0].Message}}
+    </div>
+  </div>
+<!--
+  <div class="invalid-feedback mb-3">
+    {{this.Response[1].Message}}
+  </div> -->
+  <app-alert-error class="mt-1 mb-3" [ObjAlert]="Response[1]"  (ObjToChangeFather)="CloseAlert($event)" *ngIf="OpenAlert"></app-alert-error>
+  <button type="button" class="btn btn-primary mt-3 mb-3" (click)="OnClickFinish()">סיום</button>
+
+</div>
+

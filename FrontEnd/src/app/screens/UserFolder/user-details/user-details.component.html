@@ -1,0 +1,25 @@
+<div class="container mt-3" >
+  <h2>פרטיים אישים</h2>
+  <div class="table-responsive">
+    <table class="table table-dark table-hover ">
+      <thead>
+        <tr>
+          <th>שם פרטי</th>
+          <th>שם משפחה</th>
+          <th>מייל</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{UserDetails.FirstName}}</td>
+          <td>{{UserDetails.LastName}}</td>
+          <td><a href="mailto: {{UserDetails.Email}}">{{UserDetails.Email}}</a></td>
+          <td><button type="button" class="btn btn-danger btn-secondary" title="מחיקה מהאתר" (click)="onClickDelete()">מחק</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-alert-error class="mt-1 mb-2" [ObjAlert]="ToAlert"  (ObjToChangeFather)="CloseAlert($event)" *ngIf="OpenAlert"></app-alert-error>
+</div>
+

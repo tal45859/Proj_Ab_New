@@ -1,0 +1,5 @@
+<!-- אני רוצה שהוא יבדוק את פרטי המודעה יעלה אותם לשרת ויחזיר לי מזהה מודעה -->
+<app-add-post (StageOUT)="ChangeStage($event)" (Id)="ChangePostId($event)" *ngIf="Stage==1"></app-add-post>
+
+<!--אני ישלח לו את המזהה מודעה והוא יעלה תמונות חפשי -->
+<app-add-image [Id]="PostId" *ngIf="Stage==2"></app-add-image>

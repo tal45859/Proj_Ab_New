@@ -1,0 +1,9 @@
+<app-header *ngIf="Nav == null " class="header" [MenuItemData]="DefultNav" ></app-header>
+<app-header *ngIf="Nav == 'User' " class="header" [MenuItemData]="UserNav" ></app-header>
+<app-header *ngIf="Nav == 'Admin' " class="header" [MenuItemData]="AdminNav" ></app-header>
+<main class="d-flex flex-column justify-content-between h-100">
+<div class="bb">
+   <app-content class="col-10"></app-content>
+</div>
+<app-foter class="foter"></app-foter>
+</main>

@@ -1,0 +1,29 @@
+<div class="container mt-4 mb-3 w-25 p-3 border border-secondary text-dark n">
+  <h2 class="mb-3 text-primary ">הוספת מודעה</h2>
+
+  <div class="mb-3">
+    <input  [(ngModel)]="ObjToAddPost.Header" type="text"  placeholder="כותרת" maxlength="30"
+    class="form-control {{this.Response[0].Isok ? '' : 'is-invalid'}}"
+    aria-describedby="validationServerHeaderFeedback"   required>
+   <div id="validationServerHeaderFeedback" class="invalid-feedback">
+     {{this.Response[0].Message}}
+   </div>
+  </div>
+
+  <div class="mb-3">
+    <input  [(ngModel)]="ObjToAddPost.About" type="text"  placeholder="פרטים נוספים" maxlength="150"
+    class="form-control {{this.Response[1].Isok ? '' : 'is-invalid'}}"
+    aria-describedby="validationServerAboutFeedback"   required>
+   <div id="validationServerAboutFeedback" class="invalid-feedback">
+     {{this.Response[1].Message}}
+   </div>
+  </div>
+
+  <!-- <div class="invalid-feedback mb-3">
+    {{this.Response[2].Message}}
+  </div> -->
+  <app-alert-error class="mb-3" [ObjAlert]="Response[2]"  (ObjToChangeFather)="CloseAlert($event)" *ngIf="OpenAlert"></app-alert-error>
+  <button class="btn btn-primary" (click)="OnClickAddPost()">המשך</button>
+
+</div>
+
