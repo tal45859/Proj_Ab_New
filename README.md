@@ -20,11 +20,11 @@ The Proj Ab New project is designed to serve my clients who wanted a website to 
 
 ## Some pictures from the project
 ### Home page
-![HomePage](https://github.com/tal45859/Proj_Ab_New/blob/main/screns/home.png)
+![HomePage](https://github.com/tal45859/Proj_Ab_New/blob/main/screns/homee.png)
 ### Admin UX page
 ![Admin](https://github.com/tal45859/Proj_Ab_New/blob/main/screns/AdminUX.png)
 ### Post Page
-![Post](https://github.com/tal45859/Proj_Ab_New/blob/main/screns/asad.png)
+![Post](https://github.com/tal45859/Proj_Ab_New/blob/main/screns/post.png)
 ### Login Page
 ![Login](https://github.com/tal45859/Proj_Ab_New/blob/main/screns/login.png)
 ### Messages Page
