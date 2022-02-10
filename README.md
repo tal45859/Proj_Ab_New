@@ -23,7 +23,7 @@ The Proj Ab New project is designed to serve my clients who wanted a website to 
 ![HomePage](https://github.com/tal45859/Proj_Ab_New/blob/main/screns/homee.png)
 ### Admin UX page
 ![Admin](https://github.com/tal45859/Proj_Ab_New/blob/main/screns/AdminUX.png)
-### Post Page
+### Post Page From Admin 
 ![Post](https://github.com/tal45859/Proj_Ab_New/blob/main/screns/post.png)
 ### Login Page
 ![Login](https://github.com/tal45859/Proj_Ab_New/blob/main/screns/login.png)
